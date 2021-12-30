@@ -9,10 +9,13 @@ DROPIN="/etc/systemd/system/systemd-udevd.service.d/99-umockdev.conf"
 
 at_exit() {
     rm -f "$DROPIN"
+    # Recreate the udev database _without_ the umockdev's preload DSO
+    unset LD_PRELOAD UMOCKDEV_DIR
     systemctl daemon-reload
     systemctl restart systemd-udevd
     udevadm control --ping
     udevadm info -c
+    udevadm trigger --settle
 }
 
 trap at_exit EXIT
