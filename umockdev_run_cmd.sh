@@ -1,5 +1,5 @@
 #!/bin/bash
-# Usage: umockdev-run -d xxx.umockdev -- ./run_test.sh udevadm info /sys/class/...
+# Usage: umockdev-run -d xxx.umockdev -- ./umockdev_run_cmd.sh udevadm info /sys/class/...
 
 set -eux
 set -o pipefail
