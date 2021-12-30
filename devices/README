@@ -1,0 +1,3 @@
+Generated files:
+    * *.umockdev: umockdev-record /sys/class/net/mydev > mydev.umockdev
+    * *.expected: udevadm test-builtin net_id /sys/class/net/mydev | grep -v "^ID_NET_NAMING_SCHEME=" >mydev.expected 
