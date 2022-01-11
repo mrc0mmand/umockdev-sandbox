@@ -1,7 +1,7 @@
 #!/bin/bash
 # Usage: umockdev-run -d xxx.umockdev -- ./umockdev_run_cmd.sh udevadm info /sys/class/...
 
-set -eux
+set -eu
 set -o pipefail
 
 UMOCKDEV_DIR="${UMOCKDEV_DIR:?This script should run under umockdev-run}"
